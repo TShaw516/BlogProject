@@ -1,0 +1,368 @@
+﻿* {
+    font-family: 'Amatic SC', cursive;
+    line-height: 1.618em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.bgred {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+}
+
+header, section {
+    margin: 1em 0;
+    padding: 3em;
+    min-height: 20em;
+}
+
+h1 {
+    padding-top: 2em;
+}
+
+section > p {
+    margin: 1em 0;
+}
+
+section ul {
+    padding-left: 1.5em;
+}
+
+header, footer, #aboutsection, #spartanprojects, #contact {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+header {
+    background: url(../images/spartan-helmet.png) no-repeat;
+    background-position: bottom 1em left;
+    height: 560px;
+}
+
+header, #spartanprojects, footer {
+    color: #fff;
+}
+
+    header h1 {
+        font-size: 5em;
+        display: flex;
+        justify-content: end;
+        padding-top: 1em;
+        text-shadow: -1px -1px 3px rgba(5, 5, 5, 0.9), 1px 1px 3px rgba(5, 5, 5, 0.9);
+    }
+
+    header h2 {
+        font-size: 1.5em;
+        display: flex;
+        justify-content: end;
+        padding-right: .9em;
+        text-shadow: -1px -1px 3px rgba(5, 5, 5, 0.9), 1px 1px 3px rgba(5, 5, 5, 0.9);
+    }
+
+@media all and (max-width: 760px) {
+
+    header h1 {
+        padding-top: .5em;
+    }
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+}
+
+.navalign {
+    margin: 0 auto;
+    max-width: 960px;
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+}
+
+nav a {
+    padding: .5em 1em;
+    color: rgb(192, 189, 189);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 3px rgba(5, 5, 5, 0.9), 1px 1px 3px rgba(5, 5, 5, 0.9);
+}
+
+    nav a::first-letter {
+        font-size: 1.5em;
+        text-decoration: underline;
+        text-decoration-thickness: .1em;
+    }
+
+
+    nav a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+
+#aboutsection, #contact, #projects article {
+    color: #290b08;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+#aboutcontainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+    #aboutcontainer .grid-item-1 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 32%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #aboutcontainer img {
+        -moz-box-shadow: 0px 6px 5px rgb(121, 118, 118);
+        -webkit-box-shadow: 0px 6px 5px rgb(121, 118, 118);
+        box-shadow: 0px 6px 5px rgb(121, 118, 118);
+        -moz-border-radius: 230px;
+        -webkit-border-radius: 230px;
+        border-radius: 230px;
+    }
+
+
+
+#aboutsection h2 {
+    text-align: center;
+    margin-bottom: .4em;
+}
+
+@media all and (max-width: 760px) {
+
+    #aboutcontainer .grid-item-1 {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #aboutcontainer .grid-item-2 {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+        #aboutcontainer .grid-item-2 h3 {
+            width: 100%;
+        }
+
+        #aboutcontainer .grid-item-2 ul li {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            list-style-type: none;
+        }
+}
+
+
+#aboutsection .grid-item-2 h3 {
+    text-align: center;
+    margin-bottom: .4em;
+}
+
+.grid-item-2 ul {
+    margin-top: 4em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+    .grid-item-2 ul li {
+        list-style-type: none;
+    }
+
+        .grid-item-2 ul li a {
+            color: #3D0101;
+        }
+
+#aboutcontainer .grid-item-2 .github {
+    width: 3em;
+    float: left;
+    padding: 0;
+    margin: 0 .5em 0 0;
+}
+
+.grid-item-2 ul li a:hover {
+    color: #040000;
+}
+
+    .grid-item-2 ul li a:hover .github path {
+        fill: #9cdaf1;
+        -webkit-transition: fill 1s ease-out;
+        -moz-transition: fill 1s ease-out;
+        -o-transition: fill 1s ease-out;
+        transition: fill 1s ease-out;
+    }
+
+.grid-item-2 .fa-linkedin-in {
+    font-size: 2.5em;
+    float: left;
+    margin-top: .2em;
+    padding-right: .3em;
+}
+
+.grid-item-2 ul li a:hover .fa-linkedin-in {
+    color: #2867b2;
+    -webkit-transition: color 1s ease-out;
+    -moz-transition: color 1s ease-out;
+    -o-transition: color 1s ease-out;
+    transition: color 1s ease-out;
+}
+
+.grid-item-3 {
+    width: 100%;
+    margin-top: 2em;
+    text-align: center;
+}
+
+    .grid-item-3 h3 {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .grid-item-3 ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin-top: 2em;
+        padding: 0;
+    }
+
+        .grid-item-3 ul li {
+            width: 3.5em;
+            list-style-type: none;
+        }
+
+
+
+#projects {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+#spartanprojects h2 {
+    padding-bottom: .5em;
+}
+
+#spartanprojects h4 {
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+
+#projects article {
+    background: #fff;
+    border-radius: .5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1em auto;
+    width: 32%;
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+}
+
+article a h3, article a p {
+    color: #290b08;
+}
+
+article a h3 {
+    font-size: 2em;
+}
+
+article a p {
+    padding-top: 1em;
+}
+
+#projects article:hover {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    color: #fff;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+    #projects article:hover h3, #projects article:hover p {
+        color: #fff;
+    }
+
+    #projects article:hover .github path {
+        fill: #fff;
+    }
+
+.github {
+    width: 4.5em;
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+
+@media all and (max-width: 760px) {
+
+    #projects article {
+        background: #fff;
+        border-radius: .5em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 1em auto;
+        width: 100%;
+    }
+}
+
+
+
+#contact ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 2em;
+    padding: 0;
+}
+
+    #contact ul li {
+        width: 3.5em;
+        list-style-type: none;
+    }
+
+        #contact ul li a {
+            color: #290b08;
+        }
+
+            #contact ul li a:hover {
+                color: #0a0302;
+            }
+
+
+
+footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+}

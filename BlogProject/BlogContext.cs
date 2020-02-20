@@ -39,18 +39,24 @@ namespace BlogProject
                 new Blog()
                 {
                     Id = 2,
-                    Name = "Travel for Dummies",
+                    Title = "Travel for Dummies",
                     Content = "The one stop shop for all your traveling needs",
-                    Author = "Samuel Burns"
-                    PublishDate = "01JAN19
+                    Author = "Samuel Burns",
+                    PublishDate = "01JAN19",
+                    Category = "Travel",
+                    Tags = "Cleveland",
+
                 },
 
                 new Blog()
                 {
                     Id = 3,
-                    Name = "HTML, CSS, JS, oh my!",
-                    Description = "OMG, the front end will become your BFF",
-                    InstructorId = 2
+                    Title = "Cooking on a Budget",
+                    Content = "Tasty Snacks with a low price point",
+                    Author = "John Doe",
+                    PublishDate = "16MAY17",
+                    Category = "Food",
+                    Tags = "Toronto",
                 });
 
 
@@ -58,4 +64,5 @@ namespace BlogProject
             base.OnModelCreating(modelBuilder);
 
         }
+    }
 }
