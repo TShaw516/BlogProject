@@ -68,5 +68,24 @@ namespace BlogProject.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Delete(blog);
+            return RedirectToAction("Index");
+        }
+
     }
 }
