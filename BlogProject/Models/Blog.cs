@@ -18,7 +18,7 @@ namespace BlogProject.Models
         public string Content { get; set; }
         [Required(ErrorMessage = "You must add an Author!")]
         public string Author { get; set; }
-        public string PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
         [Required(ErrorMessage = "You must add a Category!")]
         public string Category { get; set; }
         [Required(ErrorMessage = "You must add a Tag!")]
@@ -30,7 +30,7 @@ namespace BlogProject.Models
 
         }
 
-        public Blog(int id, string title, string content, string author, string publishDate, string category, string tags )
+        public Blog(int id, string title, string content, string author, DateTime publishDate, string category, string tags )
         {
             BlogId = id;
             Title = title;

@@ -10,6 +10,8 @@ namespace BlogProject
     public class BlogContext : DbContext
     {
         public DbSet<Blog> Blog { get; set; }
+        public DbSet<Tag> Tag { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,7 +33,7 @@ namespace BlogProject
                     Title = "First Blog",
                     Content = "Machine learning for humans",
                     Author = "Tom Shaw",
-                    PublishDate = "19FEB20",
+                    PublishDate = DateTime.Now,
                     Category = "Computers",
                     Tags = "Machine Learning"
                 },
@@ -42,7 +44,7 @@ namespace BlogProject
                     Title = "Travel for Dummies",
                     Content = "The one stop shop for all your traveling needs",
                     Author = "Samuel Burns",
-                    PublishDate = "01JAN19",
+                    PublishDate = DateTime.Now,
                     Category = "Travel",
                     Tags = "Cleveland",
 
@@ -54,12 +56,10 @@ namespace BlogProject
                     Title = "Cooking on a Budget",
                     Content = "Tasty Snacks with a low price point",
                     Author = "John Doe",
-                    PublishDate = "16MAY17",
+                    PublishDate = DateTime.Now,
                     Category = "Food",
                     Tags = "Toronto",
                 });
-
-
 
             base.OnModelCreating(modelBuilder);
 
