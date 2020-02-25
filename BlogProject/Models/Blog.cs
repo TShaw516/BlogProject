@@ -8,13 +8,18 @@ namespace BlogProject.Models
     public class Blog
     {
         //Properties
-        
+
         public int Id { get; set; }
+        [Required(ErrorMessage = "You must enter a Title!")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "You must enter Content!")]
         public string Content { get; set; }
+        [Required(ErrorMessage = "You must add an Author!")]
         public string Author { get; set; }
         public string PublishDate { get; set; }
+        [Required(ErrorMessage = "You must add a Category!")]
         public string Category { get; set; }
+        [Required(ErrorMessage = "You must add a Tag!")]
         public string Tags { get; set; }
 
         //Constructors

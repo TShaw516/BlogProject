@@ -26,5 +26,30 @@ namespace BlogProject.Controllers
             var model = myBlogs.GetAll();
             return View(model);
         }
+
+        public IActionResult Detail(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Create(blog);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

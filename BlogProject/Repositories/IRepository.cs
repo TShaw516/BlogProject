@@ -9,5 +9,6 @@ namespace BlogProject.Repositories
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
+        void Create(T obj);
     }
 }
