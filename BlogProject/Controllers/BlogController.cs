@@ -50,6 +50,23 @@ namespace BlogProject.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Update(blog);
+            return RedirectToAction("Index");
+        }
 
     }
 }
