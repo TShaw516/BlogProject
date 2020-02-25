@@ -11,7 +11,7 @@ namespace BlogProject.Models
     {
         //Properties
 
-        public int Id { get; set; }
+        public int BlogId { get; set; }
         [Required(ErrorMessage = "You must enter a Title!")]
         public string Title { get; set; }
         [Required(ErrorMessage = "You must enter Content!")]
@@ -32,7 +32,7 @@ namespace BlogProject.Models
 
         public Blog(int id, string title, string content, string author, string publishDate, string category, string tags )
         {
-            Id = id;
+            BlogId = id;
             Title = title;
             Content = content;
             Author = author;

@@ -27,7 +27,7 @@ namespace BlogProject
             modelBuilder.Entity<Blog>().HasData(
                 new Blog()
                 {
-                    Id = 1,
+                    BlogId = 1,
                     Title = "First Blog",
                     Content = "Machine learning for humans",
                     Author = "Tom Shaw",
@@ -38,7 +38,7 @@ namespace BlogProject
 
                 new Blog()
                 {
-                    Id = 2,
+                    BlogId = 2,
                     Title = "Travel for Dummies",
                     Content = "The one stop shop for all your traveling needs",
                     Author = "Samuel Burns",
@@ -50,7 +50,7 @@ namespace BlogProject
 
                 new Blog()
                 {
-                    Id = 3,
+                    BlogId = 3,
                     Title = "Cooking on a Budget",
                     Content = "Tasty Snacks with a low price point",
                     Author = "John Doe",
