@@ -18,7 +18,7 @@ namespace BlogProject.Tests
         [Fact]
         public void CourseConstructor_Sets_Id_on_Blog()
         {
-            var result = myBlog.Id;
+            var result = myBlog.BlogId;
 
             Assert.Equal(1, result);
         }
