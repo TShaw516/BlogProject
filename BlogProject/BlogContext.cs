@@ -91,7 +91,7 @@ namespace BlogProject
                 new Tag()
                 {
                 TagId = 2,
-                TagName = "Celveland"
+                TagName = "Cleveland"
                 },
 
                 new Tag()
