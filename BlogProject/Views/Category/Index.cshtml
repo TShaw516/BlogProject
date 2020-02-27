@@ -5,21 +5,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>My Lists of Categories</h1>
+<h1>Index</h1>
 
-<section id="spartanprojects">
-    <div id="projects">
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Category in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Category.CategoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Category.CategoryName)
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "Update", new { Category.CategoryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { Category.CategoryName })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-        <ul>
-            @foreach (var cats in Model)
-            {
-                <li>
-                    <h4>@cats.CategoryId @cats.CategoryName</h4>
-                </li>
-            }
-        </ul>
+<a href="/Category/Create">Add a new course</a>
 
-    </div>
-
-</section>
 
