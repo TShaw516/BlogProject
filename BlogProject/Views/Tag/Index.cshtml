@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BlogProject.Models.Tag>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TagId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var tag in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => tag.TagId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => tag.TagName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {}) |
+                @Html.ActionLink("Details", "Details", new {tag.TagId}) |
+                @Html.ActionLink("Delete", "Delete", new {tag.TagName})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
