@@ -18,7 +18,7 @@ namespace BlogProject.Controllers
         }
 
         // GET: /<controller>/
-        public ActionResult Index()
+        public IActionResult Index()
         {
             var model = myCategories.GetAll();
             return View(model);
@@ -47,5 +47,4 @@ namespace BlogProject.Controllers
             return RedirectToAction("Index");
         }
     }
-}
 }

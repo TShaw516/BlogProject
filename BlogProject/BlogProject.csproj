@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\image\" />
   </ItemGroup>
 
