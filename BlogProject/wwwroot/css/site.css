@@ -1,5 +1,5 @@
 ﻿* {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Oswald', sans-serif;
     line-height: 1.618em;
     box-sizing: border-box;
     margin: 0;
@@ -8,7 +8,9 @@
 }
 
 .bgred {
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(126,3,3,1) 94%);
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
 }
 
 header, section {
@@ -17,17 +19,13 @@ header, section {
     min-height: 20em;
 }
 
-h1 {
-    padding-top: 2em;
-}
+    section > p {
+        margin: 1em 0;
+    }
 
-section > p {
-    margin: 1em 0;
-}
-
-section ul {
-    padding-left: 1.5em;
-}
+    section ul {
+        padding-left: 1.5em;
+    }
 
 header, footer, #aboutsection, #spartanprojects, #contact {
     margin: 0 auto;
@@ -73,7 +71,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(126,3,3,1) 94%);
 }
 
 .navalign {
@@ -302,7 +300,7 @@ article a p {
 }
 
 #projects article:hover {
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-color: #290b08;
     color: #fff;
     -webkit-transition: background-color 1s ease-out;
     -moz-transition: background-color 1s ease-out;

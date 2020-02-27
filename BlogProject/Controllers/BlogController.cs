@@ -26,5 +26,66 @@ namespace BlogProject.Controllers
             var model = myBlogs.GetAll();
             return View(model);
         }
+
+        public IActionResult Detail(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Create(blog);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Update(blog);
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var model = myBlogs.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myBlogs.Delete(blog);
+            return RedirectToAction("Index");
+        }
+
     }
 }

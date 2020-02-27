@@ -10,10 +10,12 @@ namespace BlogProject
     public class BlogContext : DbContext
     {
         public DbSet<Blog> Blog { get; set; }
+        public DbSet<Tag> Tag { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=DESKTOP-VRNV90S\\SQLEXPRESS;Database=Blog;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=Blog;Trusted_Connection=True;";
 
             optionsBuilder.UseSqlServer(connectionString)
                           .UseLazyLoadingProxies();
@@ -27,22 +29,22 @@ namespace BlogProject
             modelBuilder.Entity<Blog>().HasData(
                 new Blog()
                 {
-                    Id = 1,
+                    BlogId = 1,
                     Title = "First Blog",
                     Content = "Machine learning for humans",
                     Author = "Tom Shaw",
-                    PublishDate = "19FEB20",
+                    PublishDate = DateTime.Now,
                     Category = "Computers",
                     Tags = "Machine Learning"
                 },
 
                 new Blog()
                 {
-                    Id = 2,
+                    BlogId = 2,
                     Title = "Travel for Dummies",
                     Content = "The one stop shop for all your traveling needs",
                     Author = "Samuel Burns",
-                    PublishDate = "01JAN19",
+                    PublishDate = DateTime.Now,
                     Category = "Travel",
                     Tags = "Cleveland",
 
@@ -50,16 +52,14 @@ namespace BlogProject
 
                 new Blog()
                 {
-                    Id = 3,
+                    BlogId = 3,
                     Title = "Cooking on a Budget",
                     Content = "Tasty Snacks with a low price point",
                     Author = "John Doe",
-                    PublishDate = "16MAY17",
+                    PublishDate = DateTime.Now,
                     Category = "Food",
                     Tags = "Toronto",
                 });
-
-
 
             base.OnModelCreating(modelBuilder);
 

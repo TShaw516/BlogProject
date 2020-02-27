@@ -11,14 +11,14 @@ namespace BlogProject.Tests
 
         public BlogModelTests()
         {
-            myBlog = new Blog(1, "My Blog", "Here is Some Content", "Tom", "19FEB20", "Travel", "Cleveland");
+            myBlog = new Blog(1, "My Blog", "Here is Some Content", "Tom", DateTime.Now, "Travel", "Cleveland");
         }
 
 
         [Fact]
         public void CourseConstructor_Sets_Id_on_Blog()
         {
-            var result = myBlog.Id;
+            var result = myBlog.BlogId;
 
             Assert.Equal(1, result);
         }
@@ -47,14 +47,7 @@ namespace BlogProject.Tests
             Assert.Equal("Tom", result);
         }
 
-        [Fact]
-        public void CourseConstructor_Sets_PublishDate_on_Blog()
-        {
-            var result = myBlog.PublishDate;
-
-            Assert.Equal("19FEB20", result);
-        }
-
+    
         [Fact]
         public void CourseConstructor_Sets_Genre_on_Blog()
         {

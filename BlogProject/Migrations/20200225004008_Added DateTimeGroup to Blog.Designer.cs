@@ -4,14 +4,16 @@ using BlogProject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogProject.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20200225004008_Added DateTimeGroup to Blog")]
+    partial class AddedDateTimeGrouptoBlog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,7 +62,7 @@ namespace BlogProject.Migrations
                             Author = "Tom Shaw",
                             Category = "Computers",
                             Content = "Machine learning for humans",
-                            PublishDate = new DateTime(2020, 2, 25, 8, 34, 15, 315, DateTimeKind.Local).AddTicks(2637),
+                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 43, DateTimeKind.Local).AddTicks(6327),
                             Tags = "Machine Learning",
                             Title = "First Blog"
                         },
@@ -70,7 +72,7 @@ namespace BlogProject.Migrations
                             Author = "Samuel Burns",
                             Category = "Travel",
                             Content = "The one stop shop for all your traveling needs",
-                            PublishDate = new DateTime(2020, 2, 25, 8, 34, 15, 317, DateTimeKind.Local).AddTicks(6156),
+                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 46, DateTimeKind.Local).AddTicks(4351),
                             Tags = "Cleveland",
                             Title = "Travel for Dummies"
                         },
@@ -80,7 +82,7 @@ namespace BlogProject.Migrations
                             Author = "John Doe",
                             Category = "Food",
                             Content = "Tasty Snacks with a low price point",
-                            PublishDate = new DateTime(2020, 2, 25, 8, 34, 15, 317, DateTimeKind.Local).AddTicks(6217),
+                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 46, DateTimeKind.Local).AddTicks(4445),
                             Tags = "Toronto",
                             Title = "Cooking on a Budget"
                         });
