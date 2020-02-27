@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BlogProject.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>My Lists of Categories</h1>
+
+<section id="spartanprojects">
+    <div id="projects">
+
+        <ul>
+            @foreach (var cats in Model)
+            {
+                <li>
+                    <h4>@cats.CategoryId @cats.CategoryName</h4>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+</section>
+
