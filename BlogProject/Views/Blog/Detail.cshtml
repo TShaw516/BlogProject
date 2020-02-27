@@ -23,11 +23,17 @@
                 <p>
                     @Model.Content
                 </p>
-             
+                <p>
+                    @Model.Category.CategoryName
+                </p>
+                <p>
+                    @Model.Tag.TagName
+                </p>
+
 
                 <a href="/Blog/Update/@Model.BlogId">Edit</a>
                 <a href="/Blog/Delete/@Model.BlogId">Delete</a>
-                </a>
+            </a>
 </article>
 
 
