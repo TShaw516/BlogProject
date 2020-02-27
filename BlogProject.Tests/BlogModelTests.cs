@@ -11,7 +11,7 @@ namespace BlogProject.Tests
 
         public BlogModelTests()
         {
-            myBlog = new Blog(1, "My Blog", "Here is Some Content", "Tom", DateTime.Now, "Travel", "Cleveland");
+            myBlog = new Blog(1, "My Blog", "Here is Some Content", "Tom", DateTime.Now, 1 , 1);
         }
 
 
@@ -48,21 +48,6 @@ namespace BlogProject.Tests
         }
 
     
-        [Fact]
-        public void CourseConstructor_Sets_Genre_on_Blog()
-        {
-            var result = myBlog.Category;
-
-            Assert.Equal("Travel", result);
-        }
-
-        [Fact]
-        public void CourseConstructor_Sets_Tags_on_Blog()
-        {
-            var result = myBlog.Tags;
-
-            Assert.Equal("Cleveland", result);
-        }
 
     }
 }

@@ -34,8 +34,8 @@ namespace BlogProject
                     Content = "Machine learning for humans",
                     Author = "Tom Shaw",
                     PublishDate = DateTime.Now,
-                    Category = "Computers",
-                    Tags = "Machine Learning"
+                    CategoryId = 1,
+                    TagId = 1
                 },
 
                 new Blog()
@@ -45,8 +45,8 @@ namespace BlogProject
                     Content = "The one stop shop for all your traveling needs",
                     Author = "Samuel Burns",
                     PublishDate = DateTime.Now,
-                    Category = "Travel",
-                    Tags = "Cleveland",
+                    CategoryId = 2,
+                    TagId = 2
 
                 },
 
@@ -57,8 +57,47 @@ namespace BlogProject
                     Content = "Tasty Snacks with a low price point",
                     Author = "John Doe",
                     PublishDate = DateTime.Now,
-                    Category = "Food",
-                    Tags = "Toronto",
+                    CategoryId = 3,
+                    TagId = 3
+                });
+
+            modelBuilder.Entity<Category>().HasData(
+                new Category()
+                {
+                    CategoryId = 1,
+                    CategoryName = "Technology"
+                },
+
+                new Category()
+                {
+                    CategoryId = 2,
+                    CategoryName = "Travel"
+                },
+
+                new Category()
+                {
+                    CategoryId = 3,
+                    CategoryName = "Cooking"
+                });
+
+            modelBuilder.Entity<Tag>().HasData(
+   
+                new Tag()
+                {
+                TagId = 1,
+                TagName = "Toronto"
+                },
+
+                new Tag()
+                {
+                TagId = 2,
+                TagName = "Celveland"
+                },
+
+                new Tag()
+                {
+                TagId = 3,
+                TagName = "Pittsburgh"
                 });
 
             base.OnModelCreating(modelBuilder);

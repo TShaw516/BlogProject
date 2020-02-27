@@ -7,10 +7,24 @@
     text-decoration: none;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .bgred {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(126,3,3,1) 94%);
     -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
     box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
+    flex-shrink: 0;
+}
+
+.main {
+    flex: 1 0 auto;
 }
 
 header, section {
@@ -63,6 +77,29 @@ header, #spartanprojects, footer {
     header h1 {
         padding-top: .5em;
     }
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    padding-top: 1em;
+    text-align: center;
+}
+
+h4 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    padding-top: 1em;
+    text-align: center;
+}
+
+hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(126,3,3,1) 94%);
+    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 
@@ -275,7 +312,7 @@ h2 {
 }
 
 #projects article {
-    background: #fff;
+    background: `;
     border-radius: .5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 1em auto;

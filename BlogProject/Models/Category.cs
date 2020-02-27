@@ -9,5 +9,18 @@ namespace BlogProject.Models
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+
+        public virtual ICollection<Blog> Blogs { get; set; }
+
+        public Category()
+        {
+
+        }
+
+        public Category(int catid, string catname)
+        {
+            CategoryId = catid;
+            CategoryName = catname;
+        }
     }
 }

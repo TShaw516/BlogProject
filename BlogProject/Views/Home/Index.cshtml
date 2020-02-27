@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -8,40 +12,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Athor" content="Spartan">
     <meta name="description" content="About Spartan Code">
-
+    <Title> Spartan Homepage </Title>
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="stylesheet" type="text/css" href="~/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" type="text/css" href="~/css/site.css?version=1.2">
-
-    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/css/homepage.css">
 </head>
-<body>
-   
-    
-    <nav>
-        <div class="navalign">
-            <a href="/Home/Index">Home</a>
-            <a href="/Blog/Index">Blogs</a>
-            <a href="/Blog/Create">Add Blog</a>
+        
+    <body>
+        <div class="spartanlogo">
+            <nav>
+                <div class="navalign">
+                <a href="/Blog/Index">Blogs</a>
+                </div>
+            </nav>
+            <p>Spartan<span>BLOGS</span></p>
         </div>
-    </nav>
- 
+    </body>
 
-        <div class="main">
-            <main>
-                @RenderBody()
-
-            </main>
-        </div>
-
-
-        <div class="bgred">
-            <footer> &copy; 2020 BlogSite</footer>
-        </div>
-
-
-</body>
 </html>
+
+

@@ -24,14 +24,16 @@
                     @Model.Content
                 </p>
                 <p>
-                    @Model.Category
+                    @Model.Category.CategoryName
                 </p>
                 <p>
-                    @Model.Tags
+                    @Model.Tag.TagName
                 </p>
 
+
                 <a href="/Blog/Update/@Model.BlogId">Edit</a>
-                </a>
+                <a href="/Blog/Delete/@Model.BlogId">Delete</a>
+            </a>
 </article>
 
 

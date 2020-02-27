@@ -23,12 +23,12 @@ namespace BlogProject.Models
         public string Author { get; set; }
         [Display(Name = "Publish Date")]
         public DateTime PublishDate { get; set; }
-        [Required(ErrorMessage = "You must add a Category!")]
-        [Display(Name = "Category")]
-        public string Category { get; set; }
-        [Required(ErrorMessage = "You must add a Tag!")]
-        [Display(Name = "Tags")]
-        public string Tags { get; set; }
+
+        public virtual Category Category { get; set; }
+        public virtual int CategoryId { get; set; }
+
+        public virtual Tag Tag { get; set; }
+        public virtual int TagId { get; set; }
 
         //Constructors
         public Blog()
@@ -36,15 +36,15 @@ namespace BlogProject.Models
 
         }
 
-        public Blog(int id, string title, string content, string author, DateTime publishDate, string category, string tags )
+        public Blog(int id, string title, string content, string author, DateTime publishDate, int catId, int tagId )
         {
             BlogId = id;
             Title = title;
             Content = content;
             Author = author;
             PublishDate = publishDate;
-            Category = category;
-            Tags = tags;
+            CategoryId = catId;
+            TagId = tagId;
         }
     }
 }
