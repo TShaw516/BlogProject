@@ -1,0 +1,37 @@
+﻿
+@model IEnumerable<BlogProject.Models.Blog>
+
+<h1>My Lists of Views</h1>
+
+<section id="spartanprojects">
+    <div id="projects">
+
+        @foreach (var blog in Model)
+        {
+            <article>
+                <a href="/Blog/Detail/@blog.BlogId">
+                    
+                    <h3>@blog.Title</h3>
+                    <p>
+                        @blog.Author
+                    </p>
+                    <p>
+                        @blog.PublishDate
+                    </p>
+                    <p>
+                        @blog.Content
+                    </p>
+                    <p>
+                        @blog.Category.CategoryName
+                    </p>
+                    <p>
+                        @blog.Tag.TagName
+                    </p>
+
+                </a>
+            </article>
+        }
+
+    </div>
+
+</section>

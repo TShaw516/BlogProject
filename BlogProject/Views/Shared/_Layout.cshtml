@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Athor" content="Spartan">
+    <meta name="description" content="About Spartan Code">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" type="text/css" href="~/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/site.css?version=1.2">
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+   
+    
+    <nav>
+        <div class="navalign">
+            <a href="/Home/Index">Home</a>
+            <a href="/Blog/Index">Blogs</a>
+            <a href="/Blog/Create">Add Blog</a>
+        </div>
+    </nav>
+ 
+
+        <div class="main">
+            <main>
+                @RenderBody()
+
+            </main>
+        </div>
+
+
+        <div class="bgred">
+            <footer> &copy; 2020 BlogSite</footer>
+        </div>
+
+
+</body>
+</html>
