@@ -7,10 +7,24 @@
     text-decoration: none;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .bgred {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(126,3,3,1) 94%);
     -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
     box-shadow: 0px 10px 13px -7px #000000, -1px 9px 27px -9px rgba(0,0,0,0);
+    flex-shrink: 0;
+}
+
+.main {
+    flex: 1 0 auto;
 }
 
 header, section {
