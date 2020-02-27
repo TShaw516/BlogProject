@@ -79,6 +79,20 @@ header, #spartanprojects, footer {
     }
 }
 
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    padding-top: 1em;
+    text-align: center;
+}
+
+h4 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    padding-top: 1em;
+    text-align: center;
+}
+
 
 nav {
     position: fixed;
