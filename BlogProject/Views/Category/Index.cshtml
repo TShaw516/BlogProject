@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<BlogProject.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Index";
@@ -33,14 +34,13 @@
                     @Html.DisplayFor(modelItem => Category.CategoryName)
                 </td>
                 <td>
-                    @Html.ActionLink("Update", "Update", new { Category.CategoryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { Category.CategoryName })
+                    <a href="/Category/Update/@Category.CategoryId/" class="button">Update</a>
+                    <a href="/Category/Delete/@Category.CategoryId/" class="button">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a href="/Category/Create">Add a new course</a>
 
 

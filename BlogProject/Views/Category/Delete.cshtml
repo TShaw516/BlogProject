@@ -1,6 +1,6 @@
-﻿@model BlogProject.Models.Tag
+﻿@model BlogProject.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@{
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -12,22 +12,18 @@
     <h4>Tag</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TagId)
+      
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TagId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TagName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TagName)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <input asp-for="CategoryId" value="@Model.CategoryId" type="hidden" class="form-control" />
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

@@ -77,7 +77,8 @@ namespace BlogProject.Controllers
         {
             myCategories.Delete(category);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category");
         }
+
     }
 }
