@@ -46,5 +46,41 @@ namespace BlogProject.Controllers
             myTags.Create(tag);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ViewResult Update(int id)
+        {
+            var model = myTags.GetById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Tag tag)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            myTags.Update(tag);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ViewResult Delete(int id)
+        {
+            var model = myTags.GetById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Tag tag)
+        {
+            myTags.Delete(tag);
+
+            return RedirectToAction("Index");
+        }
     }
 }

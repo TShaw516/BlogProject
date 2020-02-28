@@ -61,7 +61,7 @@ namespace BlogProject.Controllers
             }
             myCategories.Update(category);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category", new { id = category.CategoryId });
         }
 
         [HttpGet]
