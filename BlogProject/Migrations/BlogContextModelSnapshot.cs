@@ -62,7 +62,7 @@ namespace BlogProject.Migrations
                             Author = "Tom Shaw",
                             CategoryId = 1,
                             Content = "Machine learning for humans",
-                            PublishDate = new DateTime(2020, 2, 26, 21, 41, 18, 791, DateTimeKind.Local).AddTicks(8667),
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 597, DateTimeKind.Local).AddTicks(6264),
                             TagId = 1,
                             Title = "First Blog"
                         },
@@ -72,7 +72,7 @@ namespace BlogProject.Migrations
                             Author = "Samuel Burns",
                             CategoryId = 2,
                             Content = "The one stop shop for all your traveling needs",
-                            PublishDate = new DateTime(2020, 2, 26, 21, 41, 18, 794, DateTimeKind.Local).AddTicks(2951),
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5818),
                             TagId = 2,
                             Title = "Travel for Dummies"
                         },
@@ -82,7 +82,7 @@ namespace BlogProject.Migrations
                             Author = "John Doe",
                             CategoryId = 3,
                             Content = "Tasty Snacks with a low price point",
-                            PublishDate = new DateTime(2020, 2, 26, 21, 41, 18, 794, DateTimeKind.Local).AddTicks(2999),
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5850),
                             TagId = 3,
                             Title = "Cooking on a Budget"
                         });
@@ -127,15 +127,10 @@ namespace BlogProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("TagId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("TagName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TagId");
-
-                    b.HasIndex("TagId1");
 
                     b.ToTable("Tag");
 
@@ -148,7 +143,7 @@ namespace BlogProject.Migrations
                         new
                         {
                             TagId = 2,
-                            TagName = "Celveland"
+                            TagName = "Cleveland"
                         },
                         new
                         {
@@ -166,17 +161,10 @@ namespace BlogProject.Migrations
                         .IsRequired();
 
                     b.HasOne("BlogProject.Models.Tag", "Tag")
-                        .WithMany()
+                        .WithMany("Blogs")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("BlogProject.Models.Tag", b =>
-                {
-                    b.HasOne("BlogProject.Models.Tag", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("TagId1");
                 });
 #pragma warning restore 612, 618
         }

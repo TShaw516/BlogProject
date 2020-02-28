@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogProject.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20200225004008_Added DateTimeGroup to Blog")]
-    partial class AddedDateTimeGrouptoBlog
+    [Migration("20200228033900_UpdateDatabase")]
+    partial class UpdateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,9 +32,8 @@ namespace BlogProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -43,15 +42,18 @@ namespace BlogProject.Migrations
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Tags")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BlogId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("TagId");
 
                     b.ToTable("Blog");
 
@@ -60,30 +62,30 @@ namespace BlogProject.Migrations
                         {
                             BlogId = 1,
                             Author = "Tom Shaw",
-                            Category = "Computers",
+                            CategoryId = 1,
                             Content = "Machine learning for humans",
-                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 43, DateTimeKind.Local).AddTicks(6327),
-                            Tags = "Machine Learning",
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 597, DateTimeKind.Local).AddTicks(6264),
+                            TagId = 1,
                             Title = "First Blog"
                         },
                         new
                         {
                             BlogId = 2,
                             Author = "Samuel Burns",
-                            Category = "Travel",
+                            CategoryId = 2,
                             Content = "The one stop shop for all your traveling needs",
-                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 46, DateTimeKind.Local).AddTicks(4351),
-                            Tags = "Cleveland",
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5818),
+                            TagId = 2,
                             Title = "Travel for Dummies"
                         },
                         new
                         {
                             BlogId = 3,
                             Author = "John Doe",
-                            Category = "Food",
+                            CategoryId = 3,
                             Content = "Tasty Snacks with a low price point",
-                            PublishDate = new DateTime(2020, 2, 24, 19, 40, 8, 46, DateTimeKind.Local).AddTicks(4445),
-                            Tags = "Toronto",
+                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5850),
+                            TagId = 3,
                             Title = "Cooking on a Budget"
                         });
                 });
@@ -101,6 +103,23 @@ namespace BlogProject.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "Technology"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Travel"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "Cooking"
+                        });
                 });
 
             modelBuilder.Entity("BlogProject.Models.Tag", b =>
@@ -116,6 +135,38 @@ namespace BlogProject.Migrations
                     b.HasKey("TagId");
 
                     b.ToTable("Tag");
+
+                    b.HasData(
+                        new
+                        {
+                            TagId = 1,
+                            TagName = "Toronto"
+                        },
+                        new
+                        {
+                            TagId = 2,
+                            TagName = "Cleveland"
+                        },
+                        new
+                        {
+                            TagId = 3,
+                            TagName = "Pittsburgh"
+                        });
+                });
+
+            modelBuilder.Entity("BlogProject.Models.Blog", b =>
+                {
+                    b.HasOne("BlogProject.Models.Category", "Category")
+                        .WithMany("Blogs")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BlogProject.Models.Tag", "Tag")
+                        .WithMany("Blogs")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
