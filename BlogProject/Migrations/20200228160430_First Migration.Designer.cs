@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogProject.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20200228033900_UpdateDatabase")]
-    partial class UpdateDatabase
+    [Migration("20200228160430_First Migration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,7 +64,7 @@ namespace BlogProject.Migrations
                             Author = "Tom Shaw",
                             CategoryId = 1,
                             Content = "Machine learning for humans",
-                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 597, DateTimeKind.Local).AddTicks(6264),
+                            PublishDate = new DateTime(2020, 2, 28, 11, 4, 30, 174, DateTimeKind.Local).AddTicks(4714),
                             TagId = 1,
                             Title = "First Blog"
                         },
@@ -74,7 +74,7 @@ namespace BlogProject.Migrations
                             Author = "Samuel Burns",
                             CategoryId = 2,
                             Content = "The one stop shop for all your traveling needs",
-                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5818),
+                            PublishDate = new DateTime(2020, 2, 28, 11, 4, 30, 176, DateTimeKind.Local).AddTicks(6916),
                             TagId = 2,
                             Title = "Travel for Dummies"
                         },
@@ -84,7 +84,7 @@ namespace BlogProject.Migrations
                             Author = "John Doe",
                             CategoryId = 3,
                             Content = "Tasty Snacks with a low price point",
-                            PublishDate = new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5850),
+                            PublishDate = new DateTime(2020, 2, 28, 11, 4, 30, 176, DateTimeKind.Local).AddTicks(6958),
                             TagId = 3,
                             Title = "Cooking on a Budget"
                         });
