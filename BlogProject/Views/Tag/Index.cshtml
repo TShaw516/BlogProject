@@ -32,12 +32,12 @@
                 @Html.DisplayFor(modelItem => Tag.TagName)
             </td>
             <td>
-                @Html.ActionLink("Update", "Update", new { Tag.TagId }) |
-                @Html.ActionLink("Delete", "Delete", new { Tag.TagName })
+                <a href="/Tag/Update/@Tag.TagId/" class="button">Update</a>
+                <a href="/Tag/Delete/@Tag.TagId/" class="button">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
 
-<a href="/Category/Create">Add a new course</a>
+<a href="/Tag/Create">Add a new course</a>
