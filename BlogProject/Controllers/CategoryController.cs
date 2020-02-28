@@ -18,33 +18,30 @@ namespace BlogProject.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public ViewResult Index()
         {
             var model = myCategories.GetAll();
             return View(model);
         }
 
-        public IActionResult Detail(int id)
+        public ViewResult Detail(int id)
         {
             var model = myCategories.GetById(id);
             return View(model);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public ViewResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Category category)
+        public ActionResult Create(Category category)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            
             myCategories.Create(category);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Category");
         }
 
         [HttpGet]
