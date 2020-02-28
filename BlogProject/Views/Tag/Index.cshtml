@@ -23,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var tag in Model) {
+        @foreach (var tag in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => tag.TagId)
@@ -32,11 +32,12 @@
                 @Html.DisplayFor(modelItem => tag.TagName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {}) |
-                @Html.ActionLink("Details", "Details", new {tag.TagId}) |
-                @Html.ActionLink("Delete", "Delete", new {tag.TagName})
+                @Html.ActionLink("Update", "Update", new { tag.TagId }) |
+                @Html.ActionLink("Delete", "Delete", new { tag.TagName })
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<a href="/Category/Create">Add a new course</a>
