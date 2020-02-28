@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogProject.Migrations
 {
-    public partial class UpdateDatabase : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -86,17 +86,17 @@ namespace BlogProject.Migrations
             migrationBuilder.InsertData(
                 table: "Blog",
                 columns: new[] { "BlogId", "Author", "CategoryId", "Content", "PublishDate", "TagId", "Title" },
-                values: new object[] { 1, "Tom Shaw", 1, "Machine learning for humans", new DateTime(2020, 2, 27, 22, 39, 0, 597, DateTimeKind.Local).AddTicks(6264), 1, "First Blog" });
+                values: new object[] { 1, "Tom Shaw", 1, "Machine learning for humans", new DateTime(2020, 2, 28, 11, 4, 30, 174, DateTimeKind.Local).AddTicks(4714), 1, "First Blog" });
 
             migrationBuilder.InsertData(
                 table: "Blog",
                 columns: new[] { "BlogId", "Author", "CategoryId", "Content", "PublishDate", "TagId", "Title" },
-                values: new object[] { 2, "Samuel Burns", 2, "The one stop shop for all your traveling needs", new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5818), 2, "Travel for Dummies" });
+                values: new object[] { 2, "Samuel Burns", 2, "The one stop shop for all your traveling needs", new DateTime(2020, 2, 28, 11, 4, 30, 176, DateTimeKind.Local).AddTicks(6916), 2, "Travel for Dummies" });
 
             migrationBuilder.InsertData(
                 table: "Blog",
                 columns: new[] { "BlogId", "Author", "CategoryId", "Content", "PublishDate", "TagId", "Title" },
-                values: new object[] { 3, "John Doe", 3, "Tasty Snacks with a low price point", new DateTime(2020, 2, 27, 22, 39, 0, 599, DateTimeKind.Local).AddTicks(5850), 3, "Cooking on a Budget" });
+                values: new object[] { 3, "John Doe", 3, "Tasty Snacks with a low price point", new DateTime(2020, 2, 28, 11, 4, 30, 176, DateTimeKind.Local).AddTicks(6958), 3, "Cooking on a Budget" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Blog_CategoryId",
