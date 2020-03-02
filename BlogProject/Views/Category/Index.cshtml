@@ -34,6 +34,12 @@
                     @Html.DisplayFor(modelItem => Category.CategoryName)
                 </td>
                 <td>
+                    @foreach (var blog in Category.Blogs)
+                    {
+                        <a href="/Blog/Detail/@blog.BlogId">@blog.Title</a>
+                    }
+                </td>
+                <td>
                     <a href="/Category/Update/@Category.CategoryId/" class="button">Update</a>
                     <a href="/Category/Delete/@Category.CategoryId/" class="button">Delete</a>
                 </td>
