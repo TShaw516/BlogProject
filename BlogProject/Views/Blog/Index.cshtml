@@ -10,7 +10,7 @@
         {
             <article>
                 <a href="/Blog/Detail/@blog.BlogId">
-                    
+
                     <h3>@blog.Title</h3>
                     <p>
                         @blog.Author
@@ -21,15 +21,16 @@
                     <p>
                         @blog.Content
                     </p>
-                    <p>
-                        @blog.Category.CategoryName
-                    </p>
-                    <p>
-                        @blog.Tag.TagName
-                    </p>
-
                 </a>
-            </article>
+                    <a href="/Category/Index">
+                        @blog.Category.CategoryName
+                    </a>
+                    <a href="/Tag/Index">
+                        @blog.Tag.TagName
+                        </a>
+
+                   
+</article>
         }
 
     </div>

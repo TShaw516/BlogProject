@@ -32,6 +32,13 @@
                 @Html.DisplayFor(modelItem => Tag.TagName)
             </td>
             <td>
+                @foreach (var blog in Tag.Blogs)
+                {
+                    <a href="/Blog/Detail/@blog.BlogId">@blog.Title</a>
+                }
+
+                </td>
+            <td>
                 <a href="/Tag/Update/@Tag.TagId/" class="button">Update</a>
                 <a href="/Tag/Delete/@Tag.TagId/" class="button">Delete</a>
             </td>
