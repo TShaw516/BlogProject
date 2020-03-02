@@ -8,7 +8,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="/Tag/Create">Create a New Tag</a>
 </p>
 <table class="table">
     <thead>
@@ -32,12 +32,10 @@
                 @Html.DisplayFor(modelItem => Tag.TagName)
             </td>
             <td>
-                @Html.ActionLink("Update", "Update", new { Tag.TagId }) |
-                @Html.ActionLink("Delete", "Delete", new { Tag.TagName })
+                <a href="/Tag/Update/@Tag.TagId/" class="button">Update</a>
+                <a href="/Tag/Delete/@Tag.TagId/" class="button">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-
-<a href="/Category/Create">Add a new course</a>
